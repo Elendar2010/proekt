@@ -1,0 +1,4 @@
+*.scss
+build
+node_modules
+dist

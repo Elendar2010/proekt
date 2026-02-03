@@ -1,0 +1,47 @@
+// {
+//     "parser":"babel-eslint",
+//     "env":{
+//         "es6":true,
+//         "browser":true,
+//         "node":true,
+//     },
+//     "rules":{
+// "semi":"off",
+// "linebreak-style":"off",
+// "require-jsdoc":"off",
+// "space-before-function-paren":"off",
+// "eol-last":"off",
+//     },
+//     "extends": ["eslint:recommended", "google"],
+// }
+
+
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false,
+    "babelOptions": {
+      "presets": ["@babel/preset-env"]
+    }
+  },
+
+  "extends": [
+    "eslint:recommended"
+  ],
+
+  "rules": {
+    "semi": "off",
+    "linebreak-style": "off",
+    "require-jsdoc": "off",
+    "space-before-function-paren": "off",
+    "eol-last": "off",
+    "no-unused-vars": "off",
+    "no-undef": "off"
+  }
+}
