@@ -19,9 +19,9 @@ export class Header {
         <nav class="navbar">
           <ul class="nav-links">
             <li><a href="#header-actions">Usage</a></li>
-            <li><a href="#download">Download</a></li>
+            <li><a href="#Services">Download</a></li>
             <li><a href="#">Services</a></li>
-            <li><a href="#">News</a></li>
+            <li><a href="#orbit">News</a></li>
             <li><a href="#">Creators</a></li>
           </ul>
         </nav>

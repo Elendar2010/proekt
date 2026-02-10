@@ -3,10 +3,7 @@ import { Header } from "./Components/header";
 import { Table } from "./Components/table";
 import {DownloadMenu} from './Components/download'
 import {Orbit} from './Components/orbit'
-
-
-
-
+import { Services } from "./Components/Services";
 
 document.addEventListener("DOMContentLoaded", () => {
   const app = document.createElement("div");
@@ -16,6 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
   new Header("#header");
   new Orbit("#orbit");
   new Table("#table");
- 
+  new Services("#Services")
   new DownloadMenu("#download");
 });

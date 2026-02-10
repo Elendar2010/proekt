@@ -1,9 +1,9 @@
 
-  export class Orbit {
+export class Orbit {
   $root: HTMLElement;
   $popup: HTMLElement | null = null;
 
- menuItems = [
+  menuItems = [
     { name: 'React', description: 'The ability to use all of React’s hooks is also available in .NET-based environments. In addition to React Router DOM, it also provides support for dynamic routing through Next.js’s next/link functionality.' },
     { name: 'Front-End', description: '.NET-based web development environments commonly work alongside the following front-end technologies and formats: HTML, CSS, JavaScript, TypeScript, SCSS/Sass, Less, Stylus, JSX, TSX, JSON, and YAML.' },
     { name: 'Back-End', description: 'The system is capable of supporting back-end development in multiple programming languages, including JavaScript (Node.js), TypeScript (Node.js), Python, Java, C#, PHP, Ruby, Go (Golang), Rust, Kotlin, and C++.' },
@@ -27,8 +27,12 @@
         <div class="entry_kontener">
           <p class="enter_name">New code editor N.E.T Beta free download</p>
           <div class="comments">
-            It is equipped with a code editor and a direct N.E.T framework, designed to ensure code quality and the perfection of the writing method using artificial intelligence. It has a high level of perfection in working with back-end and front-end components. It is also possible to download the N.E.TGame library for creating games. You can download it for free until 2026.02.12. This promotion is announced by UzComp
+            It is equipped with a code editor and a direct N.E.T framework, designed to ensure code quality and the perfection of the writing method using artificial intelligence. It has a high level of perfection in working with back-end and front-end components. It is also possible to download the N.E.TGame library for creating games. You can download it for free until 2026.02.12. This promotion is announced by UzComp.
           </div>
+          
+<button class="netbeta-download">
+  N.E.TBeta Download
+</button>
         </div>
         <div class="net_components">
           <div class="net-center">N.E.T</div>
@@ -48,17 +52,18 @@
       const x = centerX + radius * Math.cos(angle);
       const y = centerY + radius * Math.sin(angle);
 
-      // Orbit button
+
       const btn = document.createElement('button');
       btn.className = 'orbit-item';
       btn.textContent = item.name;
+      btn.style.position = 'absolute';
       btn.style.left = `${x}px`;
       btn.style.top = `${y}px`;
       btn.style.transform = 'translate(-50%, -50%)';
       btn.addEventListener('click', () => this.showPopup(item));
       container.appendChild(btn);
 
-    
+
       const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
       line.setAttribute("x1", x.toString());
       line.setAttribute("y1", y.toString());
@@ -66,10 +71,10 @@
       line.setAttribute("y2", centerY.toString());
       line.setAttribute("stroke", "#22d3ee");
       line.setAttribute("stroke-width", "2");
-      line.setAttribute("stroke-dasharray", "8"); // chiziq segmentli
+      line.setAttribute("stroke-dasharray", "8");
       line.setAttribute("stroke-dashoffset", "8");
 
-      // Animate dashoffset for glowing effect
+
       const animate = document.createElementNS("http://www.w3.org/2000/svg", "animate");
       animate.setAttribute("attributeName", "stroke-dashoffset");
       animate.setAttribute("from", "8");
@@ -101,5 +106,5 @@
     });
   }
 
-  init() {}
+  init() { }
 }

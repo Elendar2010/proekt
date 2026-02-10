@@ -34,6 +34,7 @@ export class DownloadMenu {
             <button class="dw primary">PC</button>
             <button class="dw">Mac</button>
             <button class="dw">APK</button>
+            <button class="dw">View All Versions >>></button>
           </div>
         </div>
 
