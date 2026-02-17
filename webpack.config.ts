@@ -65,9 +65,9 @@ module.exports = {
       template: 'index.html',
       minify: isProd
         ? {
-            collapseWhitespace: true,
-            removeComments: true,
-          }
+          collapseWhitespace: true,
+          removeComments: true,
+        }
         : false,
     }),
 
@@ -87,27 +87,36 @@ module.exports = {
 
   module: {
     rules: [
-      // Images
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/i,
         type: 'asset/resource',
       },
-      // CSS
       {
         test: /\.css$/i,
-        use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [
+          isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader',
+          "postcss-loader",
+
+          // {
+          //   // options: {
+          //   //   postcssOptions: {
+          //   //     plugins: [
+          //   //       [
+          //   //         "postcss-preset-env",
+          //   //         {
+          //   //           // Options
+          //   //         },
+          //   //       ],
+          //   //     ],
+          //   //   },
+          //   // },
+          // },
+        ],
       },
-      // TypeScript
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
-      },
-      // JavaScript
-      {
-        test: /\.m?js$/,
-        exclude: /node_modules/,
-        use: jsLoaders(),
       },
     ],
   },

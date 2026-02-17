@@ -1,3 +1,4 @@
+import robotImg from "../images/roboto.png";
 
 export class Orbit {
   $root: HTMLElement;
@@ -18,7 +19,7 @@ export class Orbit {
     if (!el) throw new Error("EntrySection root topilmadi");
     this.$root = el as HTMLElement;
     this.render();
-    this.init();
+
   }
 
   render() {
@@ -30,81 +31,16 @@ export class Orbit {
             It is equipped with a code editor and a direct N.E.T framework, designed to ensure code quality and the perfection of the writing method using artificial intelligence. It has a high level of perfection in working with back-end and front-end components. It is also possible to download the N.E.TGame library for creating games. You can download it for free until 2026.02.12. This promotion is announced by UzComp.
           </div>
           
-<button class="netbeta-download">
+  <button class="netbeta-download">
   N.E.TBeta Download
-</button>
+  </button>
         </div>
         <div class="net_components">
-          <div class="net-center">N.E.T</div>
-          <svg class="orbit-lines" width="350" height="350" style="position:absolute; top:0; left:0; overflow:visible;"></svg>
+          <img src="${robotImg}" alt="roboto">
         </div>
       </div>
     `;
 
-    const container = this.$root.querySelector('.net_components') as HTMLElement;
-    const svg = container.querySelector('svg') as SVGSVGElement;
-    const radius = 140;
-    const centerX = 175;
-    const centerY = 175;
 
-    this.menuItems.forEach((item, idx) => {
-      const angle = (2 * Math.PI / this.menuItems.length) * idx;
-      const x = centerX + radius * Math.cos(angle);
-      const y = centerY + radius * Math.sin(angle);
-
-
-      const btn = document.createElement('button');
-      btn.className = 'orbit-item';
-      btn.textContent = item.name;
-      btn.style.position = 'absolute';
-      btn.style.left = `${x}px`;
-      btn.style.top = `${y}px`;
-      btn.style.transform = 'translate(-50%, -50%)';
-      btn.addEventListener('click', () => this.showPopup(item));
-      container.appendChild(btn);
-
-
-      const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
-      line.setAttribute("x1", x.toString());
-      line.setAttribute("y1", y.toString());
-      line.setAttribute("x2", centerX.toString());
-      line.setAttribute("y2", centerY.toString());
-      line.setAttribute("stroke", "#22d3ee");
-      line.setAttribute("stroke-width", "2");
-      line.setAttribute("stroke-dasharray", "8");
-      line.setAttribute("stroke-dashoffset", "8");
-
-
-      const animate = document.createElementNS("http://www.w3.org/2000/svg", "animate");
-      animate.setAttribute("attributeName", "stroke-dashoffset");
-      animate.setAttribute("from", "8");
-      animate.setAttribute("to", "0");
-      animate.setAttribute("dur", "1.5s");
-      animate.setAttribute("repeatCount", "indefinite");
-      line.appendChild(animate);
-
-      svg.appendChild(line);
-    });
   }
-
-  showPopup(item: { name: string; description: string }) {
-    if (this.$popup) this.$popup.remove();
-
-    const popup = document.createElement('div');
-    popup.className = 'menu-popup';
-    popup.innerHTML = `
-      <button class="close-btn">X</button>
-      <h2>${item.name}</h2>
-      <p>${item.description}</p>
-    `;
-    document.body.appendChild(popup);
-    this.$popup = popup;
-
-    popup.querySelector('.close-btn')!.addEventListener('click', () => {
-      popup.remove();
-      this.$popup = null;
-    });
-  }
-
-  init() { }
 }
